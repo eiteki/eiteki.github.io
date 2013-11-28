@@ -5,13 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>eiteki</title>
+  <title>Ubuntu 安裝 Zsh 以及 Oh-my-zsh - eiteki</title>
   <meta name="author" content="eiteki">
 
   
-  <meta name="description" content="設定hostname 在~/.ssh之下打開config檔案（若沒有就手動建立一個），內容可以寫成
-Host mySite HostName dev.eiteki.com User root
-Host mySite這行設定讓我們在ssh的時候可以輸入ssh mySite而不用輸入ssh root@ &hellip;">
+  <meta name="description" content="我不太知道zsh跟Oh-my-zsh有麼差…還有他們跟bash的關係…了解後補上 直接用apt-get安裝 1
+2
+$ apt-get install zsh
+$ zsh --version 從github下載oh-my-zsh套件(若沒有git要先安裝git) 1
+2
+$ apt-get &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +23,7 @@ Host mySite這行設定讓我們在ssh的時候可以輸入ssh mySite而不用�
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://eiteki.github.io">
+  <link rel="canonical" href="http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="eiteki" type="application/atom+xml">
@@ -65,83 +68,12 @@ Host mySite這行設定讓我們在ssh的時候可以輸入ssh mySite而不用�
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/11/28/macshang-she-ding-hostnamebing-yong-sshzi-dong-login/">MAC上設定hostname並用SSH自動login</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-28T19:19:00+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h4>設定hostname</h4>
-
-<ul>
-<li>在~/.ssh之下打開config檔案（若沒有就手動建立一個），內容可以寫成
-Host mySite
-  HostName dev.eiteki.com
-  User root</li>
-<li><code>Host mySite</code>這行設定讓我們在ssh的時候可以輸入<code>ssh mySite</code>而不用輸入<code>ssh root@dev.eiteki.com</code></li>
-<li>User的值就是登入進去的使用者名稱</li>
-<li><p>若要設定多個hostname，每個設定用一行隔開，例如：
-  Host mySite
-  HostName dev.eiteki.com
-  User root</p>
-
-<p>  Host testSite
-  HostName dev.test.com
-  User anotherUser</p></li>
-</ul>
-
-
-<h4>Password-less SSH login</h4>
-
-<ul>
-<li>若~/.ssh之下沒有key，用<code>ssh-keygne</code>產生一組key，default會存在~/.ssh/id_rsa</li>
-<li>接下來我們需要複製key到我們想要設定的remote server，可以用下面的指令
-  <code>cat ~/.ssh/id_rsa.pub | ssh user@remotehost 'cat &gt;&gt; ~/.ssh/authorized_keys'</code></li>
-</ul>
-
-
-<p>設定完成之後，就可以用<code>ssh hostname</code>自動登入遠端機器了。</p>
-
-<p>Reference: <a href="http://ivetetecedor.com/how-to-set-up-an-ssh-config-file-in-mac-os-x/">How to set up an SSH config file in Mac OS X</a>
-<a href="http://osxdaily.com/2012/05/25/how-to-set-up-a-password-less-ssh-login/">How to Set Up a Password-less SSH Login</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/18/ubuntu-an-zhuang-zsh/">Ubuntu 安裝 Zsh 以及 Oh-my-zsh</a></h1>
+      <h1 class="entry-title">Ubuntu 安裝 Zsh 以及 Oh-my-zsh</h1>
     
     
       <p class="meta">
@@ -164,7 +96,7 @@ Host mySite
   </header>
 
 
-  <div class="entry-content"><p>我不太知道zsh跟Oh-my-zsh有麼差…還有他們跟bash的關係…了解後補上</p>
+<div class="entry-content"><p>我不太知道zsh跟Oh-my-zsh有麼差…還有他們跟bash的關係…了解後補上</p>
 
 <p>直接用apt-get安裝</p>
 
@@ -209,88 +141,16 @@ Host mySite
 <p>重開機後就會套用更新，以上是最簡單的設定  <br/>
 reference : <a href="http://shyuan.github.io/blog/2012/07/10/install-zsh-and-oh-my-zsh-in-ubuntu-linux/">在 Ubuntu Linux 中安裝 Zsh 及 Oh-my-zsh</a></p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/18/ssh-into-virtualbox-vm/">SSH Into Virtualbox VM</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">eiteki</span></span>
 
-<time datetime="2013-08-18T17:51:00+08:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>我在virtualbox開了一台ubuntu server版的VM，拿來練習web相關技術。但想要把裡面的網頁透過host端的瀏覽器顯示出來，所以想到要用ssh連進去VM，以下是我嘗試還有正在學習的方法</p>
-
-<h4>NAT, port forwarding</h4>
-
-<ul>
-<li>參考<a href="http://www.debianadmin.com/howto-use-ssh-local-and-remote-port-forwarding.html">Howto use SSH local and remote port forwarding</a>中的Remote port forwarding，但第一步就不知道怎麼做了</li>
-</ul>
-
-
-<h4>從virtualbox中進行bridge設定</h4>
-
-<p>環境：mac OSX 10.8.4, virtualbox 4.2.16
-參考<a href="http://www.youtube.com/watch?v=5BsShkcweIs">SSH into your Virtualbox VM from the same computer</a></p>
-
-<ol>
-<li>打開virtualbox，選擇想要連進去的VM，按下<code>設定值</code></li>
-<li>選擇<code>網路</code>，在<code>介面卡1</code>裡面的<code>附加到</code>欄位，改成<code>橋接介面卡（Bridge Adapter）</code></li>
-<li>啟動VM，在terminal輸入<code>ifconfig</code>查詢網路資訊，在eth0的inet addr就是ssh的位址（  eg. 192.168.2.104）</li>
-</ol>
-
-
-<br>這樣就ok了，但如果host的網路ip有變，就要在確認一次VM的ip，否則原來的ip是不對的。
-
-
-<p>在host端的操作就是：</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>ssh 192.168.2.104</span></code></pre></td></tr></table></div></figure>
-
-
-<p></br>然後就能快樂的使用它囉!</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/09/hello-world/">Hello World</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -302,41 +162,40 @@ reference : <a href="http://shyuan.github.io/blog/2012/07/10/install-zsh-and-oh-
   
 
 
-<time datetime="2013-07-09T11:19:00+08:00" pubdate data-updated="true">Jul 9<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-08-18T19:50:00+08:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh/" data-via="" data-counturl="http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-  <div class="entry-content"><h4>this is my first post!</h4>
-
-<ul>
-<li>我好喜歡用這種方式打字！</li>
-<li>git 還要再熟一點XD</li>
-<li>流程很單純但我遇到很多問題QQ 一個一個解決真是開心！</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Hello World&quot;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/18/ssh-into-virtualbox-vm/" title="Previous Post: SSH into virtualbox VM">&laquo; SSH into virtualbox VM</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/11/28/macshang-she-ding-hostnamebing-yong-sshzi-dong-login/" title="Next Post: MAC上設定hostname並用SSH自動login">MAC上設定hostname並用SSH自動login &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -368,6 +227,7 @@ reference : <a href="http://shyuan.github.io/blog/2012/07/10/install-zsh-and-oh-
 
   
 </aside>
+
 
     </div>
   </div>

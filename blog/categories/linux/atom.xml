@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | eiteki]]></title>
+  <link href="http://eiteki.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://eiteki.github.io/"/>
+  <updated>2013-11-28T21:20:46+08:00</updated>
+  <id>http://eiteki.github.io/</id>
+  <author>
+    <name><![CDATA[eiteki]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 安裝 Zsh 以及 Oh-my-zsh]]></title>
+    <link href="http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh/"/>
+    <updated>2013-08-18T19:50:00+08:00</updated>
+    <id>http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh</id>
+    <content type="html"><![CDATA[<p>我不太知道zsh跟Oh-my-zsh有麼差…還有他們跟bash的關係…了解後補上</p>
+
+<p>直接用apt-get安裝
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ apt-get install zsh
+</span><span class='line'>$ zsh &mdash;version</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>從github下載oh-my-zsh套件(若沒有git要先安裝git)
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ apt-get install git &lt;br/>
+</span><span class='line'>$ git clone &lt;a href="https://github.com/robbyrussell/oh-my-zsh.git">https://github.com/robbyrussell/oh-my-zsh.git&lt;/a> ~/.oh-my-zsh</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>copy zsh的主題，如果本來沒有安裝 zsh 可以直接使用 oh-my-zsh 的範例 zshrc
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>列出目前有的theme(<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/themes">themes preview</a>)
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ls ~/.oh-my-zsh/themes</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>編輯 ~/.zshrc 更換 zsh 的 theme
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ZSH_THEME=&ldquo;XXX&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>將bash改成預設使用zsh
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ chsh -s /bin/zsh</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>重開機後就會套用更新，以上是最簡單的設定  <br/>
+reference : <a href="http://shyuan.github.io/blog/2012/07/10/install-zsh-and-oh-my-zsh-in-ubuntu-linux/">在 Ubuntu Linux 中安裝 Zsh 及 Oh-my-zsh</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH Into Virtualbox VM]]></title>
+    <link href="http://eiteki.github.io/blog/2013/08/18/ssh-into-virtualbox-vm/"/>
+    <updated>2013-08-18T17:51:00+08:00</updated>
+    <id>http://eiteki.github.io/blog/2013/08/18/ssh-into-virtualbox-vm</id>
+    <content type="html"><![CDATA[<p>我在virtualbox開了一台ubuntu server版的VM，拿來練習web相關技術。但想要把裡面的網頁透過host端的瀏覽器顯示出來，所以想到要用ssh連進去VM，以下是我嘗試還有正在學習的方法</p>
+
+<h4>NAT, port forwarding</h4>
+
+<ul>
+<li>參考<a href="http://www.debianadmin.com/howto-use-ssh-local-and-remote-port-forwarding.html">Howto use SSH local and remote port forwarding</a>中的Remote port forwarding，但第一步就不知道怎麼做了</li>
+</ul>
+
+
+<h4>從virtualbox中進行bridge設定</h4>
+
+<p>環境：mac OSX 10.8.4, virtualbox 4.2.16
+參考<a href="http://www.youtube.com/watch?v=5BsShkcweIs">SSH into your Virtualbox VM from the same computer</a></p>
+
+<ol>
+<li>打開virtualbox，選擇想要連進去的VM，按下<code>設定值</code></li>
+<li>選擇<code>網路</code>，在<code>介面卡1</code>裡面的<code>附加到</code>欄位，改成<code>橋接介面卡（Bridge Adapter）</code></li>
+<li>啟動VM，在terminal輸入<code>ifconfig</code>查詢網路資訊，在eth0的inet addr就是ssh的位址（  eg. 192.168.2.104）</li>
+</ol>
+
+
+<br>這樣就ok了，但如果host的網路ip有變，就要在確認一次VM的ip，否則原來的ip是不對的。
+
+
+<p>在host端的操作就是：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ssh 192.168.2.104</span></code></pre></td></tr></table></div></figure></notextile></div>
+</br>然後就能快樂的使用它囉!</p>
+]]></content>
+  </entry>
+  
+</feed>
