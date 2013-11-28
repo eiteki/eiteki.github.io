@@ -4,7 +4,7 @@
   <title><![CDATA[eiteki]]></title>
   <link href="http://eiteki.github.io/atom.xml" rel="self"/>
   <link href="http://eiteki.github.io/"/>
-  <updated>2013-11-28T21:48:04+08:00</updated>
+  <updated>2013-11-29T00:53:48+08:00</updated>
   <id>http://eiteki.github.io/</id>
   <author>
     <name><![CDATA[eiteki]]></name>
@@ -55,7 +55,7 @@ Host mySite
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[ubuntu 安裝 zsh 以及 Oh-my-zsh]]></title>
+    <title type="html"><![CDATA[Ubuntu 安裝 Zsh 以及 Oh-my-zsh]]></title>
     <link href="http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh/"/>
     <updated>2013-08-18T19:50:00+08:00</updated>
     <id>http://eiteki.github.io/blog/2013/08/18/ubuntu-an-zhuang-zsh</id>
@@ -107,7 +107,7 @@ reference : <a href="http://shyuan.github.io/blog/2012/07/10/install-zsh-and-oh-
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[SSH into virtualbox VM]]></title>
+    <title type="html"><![CDATA[SSH Into Virtualbox VM]]></title>
     <link href="http://eiteki.github.io/blog/2013/08/18/ssh-into-virtualbox-vm/"/>
     <updated>2013-08-18T17:51:00+08:00</updated>
     <id>http://eiteki.github.io/blog/2013/08/18/ssh-into-virtualbox-vm</id>
